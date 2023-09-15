@@ -3,7 +3,7 @@ P-2.34: Write a Python program that inputs a document and then outputs a bar-cha
 frequencies of each alphabet character that appears in that document.
 
 Do we treat each upper and lower case a separate frequency or together? 
-It would simplify and make it easier to count tghe occurences if we just consider upper and lower case characters to be the same when printing out the list count.
+It would simplify and make it easier to count the occurences if we just consider upper and lower case characters to be the same when printing out the list count.
 """
 
 import os

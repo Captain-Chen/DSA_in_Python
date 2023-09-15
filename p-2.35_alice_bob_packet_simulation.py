@@ -66,8 +66,8 @@ class Client(Worker):
     def run(self):
         logging.info(f"Thread: {self} is starting.")
         while True:
-            self.process_queue()
             self.simulate_work()
+            self.process_queue()
             self.simulate_idle()
 
     def process_queue(self):
