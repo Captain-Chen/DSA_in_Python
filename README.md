@@ -1,11 +1,12 @@
-# Projects - Data Structures & Algorithms in Python (Goodrich, Tamassia, Goldwasser)
+# Data Structures & Algorithms in Python (Goodrich, Tamassia, Goldwasser)
 
 ## What is this?
-My working solutions for some of the assigned projects in the textbook. Each solution file name follows the format of:  
-`p-chapter_number.question_number_descriptor.py` -> `p-2.34_simple_histogram.py`.  
-Code may be unoptimized and contain bugs.
+A collection of implementations using a wide range of data structures and algorithms from the Data Structures & Algorithms in Python textbook.  
 
-## How to run
-1. Clone the repository somewhere  
+*Note:* Code may be unoptimized and contain bugs.
+
 `git clone https://github.com/Captain-Chen/DSA_in_Python.git`
-2. Run each solution separately using your debugger and IDE of choice. Solutions typically are outputted to the console.
+
+### Directory
+`projects/` Working code for assigned projects at the end of each chapter  
+`algorithms/` Implementation of various algorithms mentioned throughout the textbook
