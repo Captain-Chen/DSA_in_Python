@@ -1,22 +1,11 @@
 from queue import PriorityQueue
-from itertools import count
-from dataclasses import dataclass
-from typing import Any
-
 from math import inf as infinity
 from graphs import load_graph, retrace, by_distance, City
 import os
-
-@dataclass(order=True)
-class Element:
-    priority: float
-    count: int
-    value: Any
     
 def dijkstra(graph, source, destination, weight_factory):
     previous = {}
     visited = set()
-    counter = count()
 
     # assign all paths from source node to the next node to infinity
     # this gives us a dictionary where we can look up the cost values by providing a node
@@ -24,14 +13,10 @@ def dijkstra(graph, source, destination, weight_factory):
     distance[source] = 0 # set source node to be 0 distance
 
     unvisited = PriorityQueue() # min-heap implementation
-    for node in graph.nodes:
-        unvisited.put((Element(distance[node], next(counter), node)))
-    unvisited.put(Element(distance[source], next(counter), source))
+    unvisited.put((distance[source], source)) # tuple (priority, value)
 
     while not unvisited.empty():
-        node = unvisited.get()
-        current_cost = node.priority
-        current_node = node.value
+        current_cost, current_node = unvisited.get()
         visited.add(current_node) # mark current node as visited
         for neighbor, weights in graph[current_node].items():
             if neighbor not in visited:
@@ -40,9 +25,9 @@ def dijkstra(graph, source, destination, weight_factory):
                 if new_distance < distance[neighbor]:
                     # update the distance dictionary with the new cost then add it to the queue
                     distance[neighbor] = new_distance
-                    unvisited.put(Element(distance[neighbor], next(counter), neighbor))
                     # link the current node to the neighbor
                     previous[neighbor] = current_node
+                    unvisited.put((distance[neighbor], neighbor))
 
     return retrace(previous, source, destination)
 
