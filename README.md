@@ -9,4 +9,5 @@ A collection of implementations using a wide range of data structures and algori
 
 ### Directory
 `projects/` Working code for assigned projects at the end of each chapter  
-`algorithms/` Implementation of various algorithms mentioned throughout the textbook
+`algorithms/` Implementations of various algorithms mentioned throughout the textbook  
+`data_structures/` Implementations of various data structures
